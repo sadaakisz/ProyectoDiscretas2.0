@@ -1,0 +1,9 @@
+﻿  Source.cpp
+d:\documentos\matediscreta\proyecto-discretas2.0\tarea.h(15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+d:\documentos\matediscreta\proyecto-discretas2.0\tarea.h(40): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+d:\documentos\matediscreta\proyecto-discretas2.0\vectareas.h(44): warning C4018: '<=': no coinciden signed/unsigned
+d:\documentos\matediscreta\proyecto-discretas2.0\vectareas.h(52): warning C4018: '<=': no coinciden signed/unsigned
+d:\documentos\matediscreta\proyecto-discretas2.0\vectareas.h(66): warning C4018: '<=': no coinciden signed/unsigned
+d:\documentos\matediscreta\proyecto-discretas2.0\vectareas.h(88): warning C4018: '<=': no coinciden signed/unsigned
+d:\documentos\matediscreta\proyecto-discretas2.0\source.cpp(23): warning C4018: '>': no coinciden signed/unsigned
+  Proyecto-Discretas2.0.vcxproj -> D:\Documentos\MateDiscreta\Proyecto-Discretas2.0\Debug\Proyecto-Discretas2.0.exe

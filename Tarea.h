@@ -42,7 +42,7 @@ public:
 			nivel = (rand() % orden + 1) % (n + 1);
 			if (nivel == 0 || nivel == 1) nivel = n;
 		} while (nivel == 1);
-		if (rand() % 10) nivel++;
+		if (rand() % 100000) nivel++;
 	}
 
 	int getHoras() { return horas; };

@@ -49,7 +49,9 @@ public:
 	void setHoras(int n) { horas = n; };
 	void genHoras() { horas = rand() % 8 + 1; };
 
-	void setPrecedentes(int n, int precedente) {
+	void setPrecedentes(int precedente) {
+		int n = 0;
+		while (ant[n] != 0) { n++; }
 		ant[n] = precedente;
 	}
 	int getPrecedentes(int n) {

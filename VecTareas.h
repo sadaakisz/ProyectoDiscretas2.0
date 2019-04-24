@@ -32,8 +32,8 @@ public:
 	void setHoras(int n, int nHoras) { LTarea->at(n-1)->setHoras(nHoras); }
 	void genHoras(int n) { LTarea->at(n-1)->genHoras(); }
 
-	void setPrecedentes(int tarea, int orden, int precedente) {
-		LTarea->at(tarea-1)->setPrecedentes(orden, precedente);
+	void setPrecedentes(int tarea, int precedente) {
+		LTarea->at(tarea-1)->setPrecedentes(precedente);
 	}
 	int getPrecedentes(int tarea, int orden) {
 		return LTarea->at(tarea-1)->getPrecedentes(orden);
@@ -60,26 +60,15 @@ public:
 			cout << TareasPorNivel(i) << " ";
 		}
 	}
-
 	void genPrecedentes() {
 		int precedente = 1;
 		for (int tarea = 2; tarea <= LTarea->size(); tarea++) {
 			precedente = 1;
-			for (int orden = 0; orden < TareasPorNivel(getNivel(tarea) - 1); orden++){
-				if (getNivel(precedente) < getNivel(tarea)) {
-					//setPrecedentes(tarea, orden, contTarea);
-					//contTarea++;
-					
-					while (1) {
-						if (getNivel(precedente) == getNivel(tarea) - 1) {
-							if (precedente < tarea) {
-								setPrecedentes(tarea, orden, precedente), precedente++; break;
-							}
-							else { precedente++; }
-						}
-						else precedente++;
-					}
+			while (precedente < tarea) {
+				if (getNivel(precedente) == getNivel(tarea) - 1) {
+					setPrecedentes(tarea, precedente);
 				}
+				precedente++;
 			}
 		}
 	}
@@ -88,7 +77,7 @@ public:
 		for (int tarea = 1; tarea <= LTarea->size(); tarea++) {
 			cout << "Tarea " << tarea << ": ";
 			for (int orden = 0; orden < TareasPorNivel(getNivel(tarea) - 1); orden++) {
-				if (getPrecedentes(tarea, orden) != 0) cout << getPrecedentes(tarea, orden) << ", ";
+				if (getPrecedentes(tarea, orden) != 0) cout << getPrecedentes(tarea, orden) << ", "; //** 
 			}
 			cout << endl;
 		}

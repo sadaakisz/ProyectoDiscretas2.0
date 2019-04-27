@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <string.h>
 
-void main() {
+void main2() {
 	int n = 0;
 	cout<<"Ingrese un numero del 8 al 12: ";
 	while (n != 10) {

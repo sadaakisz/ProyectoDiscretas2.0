@@ -41,16 +41,16 @@ public:
 		Rectangle tamanio = Rectangle(0, 0, 500, 500);
 		for (int i = 1; i <= t->size(); i++) {
 
-			int x=30+(1136/t->maxNivel())*(t->getNivel(i) - 1);
+			int x=40+(1136/t->maxNivel())*(t->getNivel(i) - 1);
 			int y=250;
 			if (t->TareasPorNivel(t->getNivel(i)) == 1) y = 250;
 			else if (t->TareasPorNivel(t->getNivel(i)) == 2) y = 160 + t->TareaEnNivel(i) * 190;
 			else if (t->TareasPorNivel(t->getNivel(i)) == 3) y = 90 + t->TareaEnNivel(i) * 160;
 			else if (t->TareasPorNivel(t->getNivel(i)) == 4) y = 60 + t->TareaEnNivel(i) * 130;
 			else if (t->TareasPorNivel(t->getNivel(i)) == 5) y = 30 + t->TareaEnNivel(i) * 110;
-			else if (t->TareasPorNivel(t->getNivel(i)) == 6) y = 0 + t->TareaEnNivel(i) * 90;
-			else if (t->TareasPorNivel(t->getNivel(i)) == 7) y = 0 + t->TareaEnNivel(i) * 70;
-			else if (t->TareasPorNivel(t->getNivel(i)) == 8) y = 0 + t->TareaEnNivel(i) * 50;
+			else if (t->TareasPorNivel(t->getNivel(i)) == 6) y = 0 + t->TareaEnNivel(i) * 100;
+			else if (t->TareasPorNivel(t->getNivel(i)) == 7) y = 0 + t->TareaEnNivel(i) * 90;
+			else if (t->TareasPorNivel(t->getNivel(i)) == 8) y = 0 + t->TareaEnNivel(i) * 80;
 			
 			Rectangle zoom = Rectangle(x, y, 125, 125);
 			switch (i)

@@ -129,6 +129,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DiagramaControl.h" />
     <ClInclude Include="DiagramaWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>

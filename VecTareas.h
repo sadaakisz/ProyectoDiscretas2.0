@@ -40,6 +40,18 @@ public:
 		return cont;
 	}
 
+	int TareaEnNivel(int tarea) {
+		int cont = 0;
+		vector<int>*arr = new vector<int>();
+		for (int i = 1; i <= LTarea->size(); i++) {
+			if (getNivel(tarea) == getNivel(i)) arr->push_back(i);
+		}
+		for (int i = 0; i < arr->size(); i++) {
+			if (arr->at(i) == tarea) cont = i;
+		}
+		return cont;
+	}
+
 	int maxNivel() {
 		int max = 0;
 		for (int i = 1; i <= LTarea->size(); i++) {

@@ -41,9 +41,14 @@ namespace ProyectoDiscretas20 {
 		Bitmap^ bmpT11;
 		Bitmap^ bmpT12;
 		Bitmap^ bmpBG;
-	private: System::Windows::Forms::Timer^  timer1;
-	private: System::Windows::Forms::PictureBox^  Fondo;
-	private: System::Windows::Forms::TextBox^  textBox1;
+		Bitmap^ bmpH1;
+		Bitmap^ bmpH2;
+		Bitmap^ bmpH3;
+		Bitmap^ bmpH4;
+		Bitmap^ bmpH5;
+		Bitmap^ bmpH6;
+		Bitmap^ bmpH7;
+		Bitmap^ bmpH8;
 #pragma endregion
 
 		DiagramaControl* UI;
@@ -57,7 +62,7 @@ namespace ProyectoDiscretas20 {
 			bmpT1 = gcnew Bitmap(Tarea1->Image);
 			bmpT2 = gcnew Bitmap(Tarea2->Image);
 			bmpT3 = gcnew Bitmap(Tarea3->Image);
-			bmpT4= gcnew Bitmap(Tarea4->Image);
+			bmpT4 = gcnew Bitmap(Tarea4->Image);
 			bmpT5 = gcnew Bitmap(Tarea5->Image);
 			bmpT6 = gcnew Bitmap(Tarea6->Image);
 			bmpT7 = gcnew Bitmap(Tarea7->Image);
@@ -67,6 +72,15 @@ namespace ProyectoDiscretas20 {
 			bmpT11 = gcnew Bitmap(Tarea11->Image);
 			bmpT12 = gcnew Bitmap(Tarea12->Image);
 			bmpBG = gcnew Bitmap(Fondo->Image);
+
+			bmpH1 = gcnew Bitmap(Hora1->Image);
+			bmpH2 = gcnew Bitmap(Hora2->Image);
+			bmpH3 = gcnew Bitmap(Hora3->Image);
+			bmpH4 = gcnew Bitmap(Hora4->Image);
+			bmpH5 = gcnew Bitmap(Hora5->Image);
+			bmpH6 = gcnew Bitmap(Hora6->Image);
+			bmpH7 = gcnew Bitmap(Hora7->Image);
+			bmpH8 = gcnew Bitmap(Hora8->Image);
 
 			Color Tr = Color::FromArgb(0, 0, 0);
 			bmpT1->MakeTransparent(Tr);
@@ -81,6 +95,14 @@ namespace ProyectoDiscretas20 {
 			bmpT10->MakeTransparent(Tr);
 			bmpT11->MakeTransparent(Tr);
 			bmpT12->MakeTransparent(Tr);
+			bmpH1->MakeTransparent(Tr);
+			bmpH2->MakeTransparent(Tr);
+			bmpH3->MakeTransparent(Tr);
+			bmpH4->MakeTransparent(Tr);
+			bmpH5->MakeTransparent(Tr);
+			bmpH6->MakeTransparent(Tr);
+			bmpH7->MakeTransparent(Tr);
+			bmpH8->MakeTransparent(Tr);
 
 			UI = new DiagramaControl();
 		}
@@ -115,6 +137,18 @@ namespace ProyectoDiscretas20 {
 		PictureBox^  Tarea10;
 		PictureBox^  Tarea11;
 		PictureBox^  Tarea12;
+		Timer^  timer1;
+		PictureBox^  Fondo;
+		TextBox^  textBox1;
+		PictureBox^  Hora1;
+		PictureBox^  Hora2;
+		PictureBox^  Hora3;
+		PictureBox^  Hora4;
+		PictureBox^  Hora5;
+		PictureBox^  Hora6;
+		PictureBox^  Hora7;
+		PictureBox^  Hora8;
+
 	private: System::ComponentModel::IContainer^  components;
 #pragma endregion
 
@@ -148,6 +182,14 @@ namespace ProyectoDiscretas20 {
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->Fondo = (gcnew System::Windows::Forms::PictureBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->Hora1 = (gcnew System::Windows::Forms::PictureBox());
+			this->Hora2 = (gcnew System::Windows::Forms::PictureBox());
+			this->Hora3 = (gcnew System::Windows::Forms::PictureBox());
+			this->Hora4 = (gcnew System::Windows::Forms::PictureBox());
+			this->Hora5 = (gcnew System::Windows::Forms::PictureBox());
+			this->Hora6 = (gcnew System::Windows::Forms::PictureBox());
+			this->Hora7 = (gcnew System::Windows::Forms::PictureBox());
+			this->Hora8 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Tarea1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Tarea2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Tarea3))->BeginInit();
@@ -161,6 +203,14 @@ namespace ProyectoDiscretas20 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Tarea11))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Tarea12))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Fondo))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora7))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora8))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Tarea1
@@ -322,6 +372,94 @@ namespace ProyectoDiscretas20 {
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 13;
 			// 
+			// Hora1
+			// 
+			this->Hora1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Hora1.Image")));
+			this->Hora1->Location = System::Drawing::Point(12, 274);
+			this->Hora1->Name = L"Hora1";
+			this->Hora1->Size = System::Drawing::Size(125, 31);
+			this->Hora1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->Hora1->TabIndex = 14;
+			this->Hora1->TabStop = false;
+			this->Hora1->Visible = false;
+			// 
+			// Hora2
+			// 
+			this->Hora2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Hora2.Image")));
+			this->Hora2->Location = System::Drawing::Point(12, 311);
+			this->Hora2->Name = L"Hora2";
+			this->Hora2->Size = System::Drawing::Size(125, 31);
+			this->Hora2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->Hora2->TabIndex = 15;
+			this->Hora2->TabStop = false;
+			this->Hora2->Visible = false;
+			// 
+			// Hora3
+			// 
+			this->Hora3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Hora3.Image")));
+			this->Hora3->Location = System::Drawing::Point(12, 348);
+			this->Hora3->Name = L"Hora3";
+			this->Hora3->Size = System::Drawing::Size(125, 31);
+			this->Hora3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->Hora3->TabIndex = 16;
+			this->Hora3->TabStop = false;
+			this->Hora3->Visible = false;
+			// 
+			// Hora4
+			// 
+			this->Hora4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Hora4.Image")));
+			this->Hora4->Location = System::Drawing::Point(12, 385);
+			this->Hora4->Name = L"Hora4";
+			this->Hora4->Size = System::Drawing::Size(125, 31);
+			this->Hora4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->Hora4->TabIndex = 17;
+			this->Hora4->TabStop = false;
+			this->Hora4->Visible = false;
+			// 
+			// Hora5
+			// 
+			this->Hora5->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Hora5.Image")));
+			this->Hora5->Location = System::Drawing::Point(143, 274);
+			this->Hora5->Name = L"Hora5";
+			this->Hora5->Size = System::Drawing::Size(125, 31);
+			this->Hora5->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->Hora5->TabIndex = 18;
+			this->Hora5->TabStop = false;
+			this->Hora5->Visible = false;
+			// 
+			// Hora6
+			// 
+			this->Hora6->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Hora6.Image")));
+			this->Hora6->Location = System::Drawing::Point(143, 311);
+			this->Hora6->Name = L"Hora6";
+			this->Hora6->Size = System::Drawing::Size(125, 31);
+			this->Hora6->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->Hora6->TabIndex = 19;
+			this->Hora6->TabStop = false;
+			this->Hora6->Visible = false;
+			// 
+			// Hora7
+			// 
+			this->Hora7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Hora7.Image")));
+			this->Hora7->Location = System::Drawing::Point(143, 348);
+			this->Hora7->Name = L"Hora7";
+			this->Hora7->Size = System::Drawing::Size(125, 31);
+			this->Hora7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->Hora7->TabIndex = 20;
+			this->Hora7->TabStop = false;
+			this->Hora7->Visible = false;
+			// 
+			// Hora8
+			// 
+			this->Hora8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"Hora8.Image")));
+			this->Hora8->Location = System::Drawing::Point(143, 385);
+			this->Hora8->Name = L"Hora8";
+			this->Hora8->Size = System::Drawing::Size(125, 31);
+			this->Hora8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->Hora8->TabIndex = 21;
+			this->Hora8->TabStop = false;
+			this->Hora8->Visible = false;
+			// 
 			// DiagramaWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -330,6 +468,14 @@ namespace ProyectoDiscretas20 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1210, 681);
+			this->Controls->Add(this->Hora8);
+			this->Controls->Add(this->Hora7);
+			this->Controls->Add(this->Hora6);
+			this->Controls->Add(this->Hora5);
+			this->Controls->Add(this->Hora4);
+			this->Controls->Add(this->Hora3);
+			this->Controls->Add(this->Hora2);
+			this->Controls->Add(this->Hora1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->Tarea12);
 			this->Controls->Add(this->Tarea11);
@@ -364,6 +510,14 @@ namespace ProyectoDiscretas20 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Tarea11))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Tarea12))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Fondo))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora7))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Hora8))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -378,7 +532,7 @@ private: System::Void DiagramaWindow_Load(System::Object^  sender, System::Event
 }
 private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 	UI->fondo(buffer, bmpBG);
-	UI->mostrar(buffer, bmpT1, bmpT2, bmpT3, bmpT4, bmpT5, bmpT6, bmpT7, bmpT8, bmpT9, bmpT10, bmpT11, bmpT12);
+	UI->mostrar(buffer, bmpT1, bmpT2, bmpT3, bmpT4, bmpT5, bmpT6, bmpT7, bmpT8, bmpT9, bmpT10, bmpT11, bmpT12, bmpH1, bmpH2, bmpH3, bmpH4, bmpH5, bmpH6, bmpH7, bmpH8);
 	buffer->Render(g);
 }
 };

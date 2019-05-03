@@ -8,6 +8,6 @@ d:\documentos\matediscreta\proyecto-discretas2.0\vectareas.h(57): warning C4018:
 d:\documentos\matediscreta\proyecto-discretas2.0\vectareas.h(79): warning C4018: '<=': no coinciden signed/unsigned
 d:\documentos\matediscreta\proyecto-discretas2.0\vectareas.h(80): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
 d:\documentos\matediscreta\proyecto-discretas2.0\vectareas.h(92): warning C4018: '<=': no coinciden signed/unsigned
-d:\documentos\matediscreta\proyecto-discretas2.0\diagramacontrol.h(16): warning C4018: '>': no coinciden signed/unsigned
+d:\documentos\matediscreta\proyecto-discretas2.0\diagramacontrol.h(17): warning C4018: '>': no coinciden signed/unsigned
 d:\documentos\matediscreta\proyecto-discretas2.0\diagramawindow.cpp(4): warning C4551: la llamada a la función no tiene lista de argumentos
   Proyecto-Discretas2.0.vcxproj -> D:\Documentos\MateDiscreta\Proyecto-Discretas2.0\Debug\Proyecto-Discretas2.0.exe

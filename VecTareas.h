@@ -12,7 +12,12 @@ public:
 			delete TIndividual;
 		delete LTarea;
 	}
-
+	void clear() {
+		LTarea->clear();
+	}
+	Tarea* getAt(int n) {
+		return LTarea->at(n-1);
+	}
 	void agregar(Tarea* t) { this->LTarea->push_back(t); }
 
 	int size() { return LTarea->size(); }

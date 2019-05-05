@@ -1,5 +1,6 @@
 #pragma once
 #include "DiagramaControl.h"
+//#include <msclr\marshal_cppstd.h>
 namespace ProyectoDiscretas20 {
 
 	#pragma region + Namespaces
@@ -52,6 +53,7 @@ namespace ProyectoDiscretas20 {
 #pragma endregion
 
 		DiagramaControl* UI;
+		int n = 12;
 
 	#pragma region + Constructor
 	public:
@@ -349,6 +351,7 @@ private: System::Windows::Forms::Timer^  timer1;
 			// timer1
 			// 
 			this->timer1->Enabled = true;
+			this->timer1->Tick += gcnew System::EventHandler(this, &DiagramaWindow::timer1_Tick_1);
 			// 
 			// Fondo
 			// 
@@ -367,10 +370,11 @@ private: System::Windows::Forms::Timer^  timer1;
 			// 
 			this->textBox1->BackColor = System::Drawing::SystemColors::Window;
 			this->textBox1->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->textBox1->Location = System::Drawing::Point(1003, 614);
+			this->textBox1->Location = System::Drawing::Point(1012, 631);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 13;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &DiagramaWindow::textBox1_TextChanged);
 			// 
 			// Hora1
 			// 
@@ -529,13 +533,21 @@ private: System::Void DiagramaWindow_Load(System::Object^  sender, System::Event
 	g = this->CreateGraphics();
 	espacio = BufferedGraphicsManager::Current;
 	buffer = espacio->Allocate(g, this->ClientRectangle);
+	buffer->Graphics->SmoothingMode = Drawing2D::SmoothingMode::AntiAlias;
 }
-private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void timer1_Tick_1(System::Object^  sender, System::EventArgs^  e) {
 	UI->fondo(buffer, bmpBG);
 	UI->mostrar(buffer, bmpT1, bmpT2, bmpT3, bmpT4, bmpT5, bmpT6, bmpT7, bmpT8, bmpT9, bmpT10, bmpT11, bmpT12, bmpH1, bmpH2, bmpH3, bmpH4, bmpH5, bmpH6, bmpH7, bmpH8);
-	UI->mostrarConex(buffer, 12);
+	UI->mostrarConex(buffer, n);
 	UI->mostrar(buffer, bmpT1, bmpT2, bmpT3, bmpT4, bmpT5, bmpT6, bmpT7, bmpT8, bmpT9, bmpT10, bmpT11, bmpT12, bmpH1, bmpH2, bmpH3, bmpH4, bmpH5, bmpH6, bmpH7, bmpH8);
 	buffer->Render(g);
+}
+
+private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	if (textBox1->Text!="") {
+		int s = Int32::Parse(textBox1->Text);
+		if (s >= 8 && s <= 12) UI->genLista(s), n=s;
+	}
 }
 };
 }

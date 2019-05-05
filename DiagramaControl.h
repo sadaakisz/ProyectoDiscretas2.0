@@ -1,7 +1,12 @@
 #pragma once
 #include "Tarea.h"
 #include "VecTareas.h"
+#include <iostream>
+#include <string>
 #include <string.h>
+
+using namespace std;
+using namespace System;
 using namespace System::Drawing;
 
 class DiagramaControl {
@@ -33,7 +38,33 @@ public:
 		t->impPrecedentes();
 	};
 	~DiagramaControl() {};
-
+	void genLista(int n) {
+		VecTareas* t1 = new VecTareas();
+		for (int i = 1; i <= n; i++) {
+			Tarea* aux = new Tarea(i);
+			t1->agregar(aux);
+			unsigned int maxNivel = 2;
+			if (i > 2) {
+				if (t1->getNivel(i - 2) > maxNivel) maxNivel = t1->getNivel(i - 2);
+				t1->setNivel(i, maxNivel);
+			}
+		}
+		cout << "\t| Tarea |\t| Orden |\t| Nivel |\t| Horas |" << endl;
+		for (int i = 1; i <= t1->size(); i++) {
+			t1->genHoras(i);
+			cout << endl;
+			cout << "\t\t" << i << "\t\t" << t1->getOrden(i) << "\t\t"
+				<< t1->getNivel(i) << "\t\t" << t1->getHoras(i) << endl;
+		}
+		t->clear();
+		for (int j = 1; j <= t1->size(); j++) {
+			t->agregar(t1->getAt(j));
+		}
+		t->ListaCantidadNivel();
+		cout << endl << endl;
+		t->genPrecedentes();
+		t->impPrecedentes();
+	}
 	void fondo(BufferedGraphics^ buffer, Bitmap^ bmp) {
 		Rectangle tamanio = Rectangle(0, 0, 1920, 1080);
 		Rectangle zoom = Rectangle(0, 0, 1226, 700);
@@ -103,4 +134,5 @@ public:
 			}
 		}
 	}
+	
 };

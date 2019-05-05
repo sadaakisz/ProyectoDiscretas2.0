@@ -97,4 +97,11 @@ public:
 			cout << endl;
 		}
 	}
+	int numPrecedentes(int n) {
+		int cont = 0;
+		for (int orden = 0; orden < TareasPorNivel(getNivel(n) - 1); orden++) {
+			if (getPrecedentes(n, orden) != 0) cont++;
+		}
+		return cont;
+	}
 };

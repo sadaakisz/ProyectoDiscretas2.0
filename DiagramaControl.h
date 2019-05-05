@@ -7,6 +7,7 @@ using namespace System::Drawing;
 class DiagramaControl {
 public:
 	VecTareas * t;
+	Point* pos=new Point();
 	DiagramaControl() {
 		t = new VecTareas();
 		for (int i = 1; i <= 12; i++) {
@@ -43,8 +44,8 @@ public:
 		Rectangle tamanioH = Rectangle(0, 0, 500, 125);
 		for (int i = 1; i <= t->size(); i++) {
 
-			int x=40+(1136/t->maxNivel())*(t->getNivel(i) - 1);
-			int y=250;
+			int x = 40 + (1136 / t->maxNivel())*(t->getNivel(i) - 1);
+			int y = 250;
 			if (t->TareasPorNivel(t->getNivel(i)) == 1) y = 250;
 			else if (t->TareasPorNivel(t->getNivel(i)) == 2) y = 160 + t->TareaEnNivel(i) * 190;
 			else if (t->TareasPorNivel(t->getNivel(i)) == 3) y = 90 + t->TareaEnNivel(i) * 160;
@@ -53,9 +54,9 @@ public:
 			else if (t->TareasPorNivel(t->getNivel(i)) == 6) y = 0 + t->TareaEnNivel(i) * 110;
 			else if (t->TareasPorNivel(t->getNivel(i)) == 7) y = 0 + t->TareaEnNivel(i) * 100;
 			else if (t->TareasPorNivel(t->getNivel(i)) == 8) y = 0 + t->TareaEnNivel(i) * 90;
-			
+
 			Rectangle zoomT = Rectangle(x, y, 125, 125);
-			Rectangle zoomH = Rectangle(x+12, y+110, 100, 25);
+			Rectangle zoomH = Rectangle(x + 12, y + 110, 100, 25);
 			switch (i)
 			{
 			case 1: buffer->Graphics->DrawImage(bmp1, zoomT, tamanioT, GraphicsUnit::Pixel); break;
@@ -86,13 +87,20 @@ public:
 			default:
 				break;
 			}
-
+			pos[i]=(Point(x+92, y+75));
 		}
-		
-		
-		
+
 		/*Rectangle tamanio = Rectangle(0, 0, 500, 500);
 		Rectangle zoom = Rectangle(0, 0, 125, 125);
 		buffer->Graphics->DrawImage(bmp1, zoom, tamanio, GraphicsUnit::Pixel);*/
+	}
+	void mostrarConex(BufferedGraphics^ buffer, int n) {
+		Pen^ lap = gcnew Pen(Color::LightGray, 2);
+		for (int i = 1; i <= n; i++) {
+			for (int j = 0; j < t->numPrecedentes(i); j++) {
+				//buffer->Graphics->DrawLine(lap, pos[i], pos[t->getPrecedentes(i, j)]);
+				buffer->Graphics->DrawLine(lap, pos[i].X-60, pos[i].Y-35, pos[t->getPrecedentes(i, j)].X, pos[t->getPrecedentes(i, j)].Y);
+			}
+		}
 	}
 };

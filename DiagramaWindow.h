@@ -137,7 +137,8 @@ namespace ProyectoDiscretas20 {
 		PictureBox^  Tarea10;
 		PictureBox^  Tarea11;
 		PictureBox^  Tarea12;
-		Timer^  timer1;
+private: System::Windows::Forms::Timer^  timer1;
+
 		PictureBox^  Fondo;
 		TextBox^  textBox1;
 		PictureBox^  Hora1;
@@ -348,7 +349,6 @@ namespace ProyectoDiscretas20 {
 			// timer1
 			// 
 			this->timer1->Enabled = true;
-			this->timer1->Tick += gcnew System::EventHandler(this, &DiagramaWindow::timer1_Tick);
 			// 
 			// Fondo
 			// 
@@ -367,7 +367,7 @@ namespace ProyectoDiscretas20 {
 			// 
 			this->textBox1->BackColor = System::Drawing::SystemColors::Window;
 			this->textBox1->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->textBox1->Location = System::Drawing::Point(1023, 608);
+			this->textBox1->Location = System::Drawing::Point(1003, 614);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 13;
@@ -532,6 +532,8 @@ private: System::Void DiagramaWindow_Load(System::Object^  sender, System::Event
 }
 private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 	UI->fondo(buffer, bmpBG);
+	UI->mostrar(buffer, bmpT1, bmpT2, bmpT3, bmpT4, bmpT5, bmpT6, bmpT7, bmpT8, bmpT9, bmpT10, bmpT11, bmpT12, bmpH1, bmpH2, bmpH3, bmpH4, bmpH5, bmpH6, bmpH7, bmpH8);
+	UI->mostrarConex(buffer, 12);
 	UI->mostrar(buffer, bmpT1, bmpT2, bmpT3, bmpT4, bmpT5, bmpT6, bmpT7, bmpT8, bmpT9, bmpT10, bmpT11, bmpT12, bmpH1, bmpH2, bmpH3, bmpH4, bmpH5, bmpH6, bmpH7, bmpH8);
 	buffer->Render(g);
 }

@@ -545,8 +545,10 @@ private: System::Void timer1_Tick_1(System::Object^  sender, System::EventArgs^ 
 
 private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 	if (textBox1->Text!="") {
-		int s = Int32::Parse(textBox1->Text);
-		if (s >= 8 && s <= 12) UI->genLista(s), n=s;
+		if (textBox1->Text=="8"|| textBox1->Text == "9" || textBox1->Text == "10" || textBox1->Text == "11" || textBox1->Text == "12") {
+			int s = Int32::Parse(textBox1->Text);
+			if (s >= 8 && s <= 12) UI->genLista(s), n = s;
+		}
 	}
 }
 };
